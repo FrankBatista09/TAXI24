@@ -1,0 +1,28 @@
+
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo
+    restart: always
+    container_name: taxi24-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  api:
+    build: .
+    container_name: taxi24-api
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/taxi24
+    volumes:
+      - .:/app
+    command: npm run start:dev
+
+volumes:
+  mongo_data:
