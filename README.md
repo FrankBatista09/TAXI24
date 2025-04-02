@@ -73,8 +73,8 @@ npm run test:e2e
 ### 1. Clonar repositorio
 
 ```bash
-git clone https://github.com/frankbatista09/taxi24-backend.git
-cd taxi24-backend
+git clone https://github.com/FrankBatista09/Taxi24.git
+cd Taxi24
 ```
 
 ### 2. Instalar dependencias
@@ -88,6 +88,7 @@ npm install
 Crea un archivo `.env` y define la URI de MongoDB:
 
 ```
+PORT=3000
 MONGODB_URI=mongodb://localhost:27017/taxi24
 ```
 
